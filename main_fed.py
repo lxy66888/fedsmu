@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     ssl._create_default_https_context = ssl._create_unverified_context
     # parse args
-    args = args_parser()#设置变量
+    args = args_parser()
 
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
     setup_seed(args.seed)
