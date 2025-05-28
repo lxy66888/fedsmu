@@ -373,10 +373,8 @@ class Client(DistributedTrainingDevice):
             add(target=self.histi, source=self.dW)
 
         if self.args.method =='fedsmu':
-            #更新参数
             add_mome2(target=self.U, source1=self.m, source2=self.dW, beta_1=self.args.beta1, beta_2=1-self.args.beta1)
             add_sign(target=self.U, source1=self.U)
-            #更新动量
             add_mome2(target=self.m, source1=self.m, source2=self.dW, beta_1=self.args.beta2, beta_2=1-self.args.beta2)
 
 
