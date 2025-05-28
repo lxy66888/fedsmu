@@ -33,7 +33,7 @@ if __name__ == '__main__':
     args.device = torch.device('cuda:{}'.format(args.gpu) if torch.cuda.is_available() and args.gpu != -1 else 'cpu')
     setup_seed(args.seed)
 
-    data_path = '/home/code_fedsmu/Folder/'
+    data_path = '/home/fedsmu/Folder/'
     if args.model == 'cnn':
         data_obj = DatasetObject(dataset=args.dataset, n_client=args.num_users, seed=args.seed, rule=args.iid, rule_arg=args.rule_arg, data_path=data_path)
     elif args.model == 'rnn':
