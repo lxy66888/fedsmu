@@ -43,8 +43,6 @@ if __name__ == '__main__':
         net_glob = client_model('cifar100_LeNet').to(args.device)
     elif args.model == 'cnn' and args.dataset == 'CIFAR10':
         net_glob = client_model('cifar10_LeNet').to(args.device)
-    elif args.model == 'cnn' and args.dataset == 'emnist':
-        net_glob = client_model('emnist_NN', [1 * 28 * 28, 10]).to(args.device)
     elif args.model == 'rnn' and args.dataset == 'shakespeare':
         net_glob = client_model('shakes_LSTM').to(args.device)
     else:
